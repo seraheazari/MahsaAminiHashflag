@@ -25,7 +25,7 @@ const ValidHashtagList = [{
 const readAndFlag = (item, index) => {
 	const selectHashtags = item.querySelectorAll('[href*="/hashtag"]');
 	const hashtags = selectHashtags ? Array.from(selectHashtags) : [];
-	if(hashtags.length && isRightHashtag(hashtags)) { 
+	if(hashtags.length) { 
 		hashtags.forEach(processHashtag)
 	};
 }
@@ -73,6 +73,6 @@ const createHashflag = () => {
 	return span;
 }
 
-setInterval(() => {
-	main();	
-}, 500)
+window.addEventListener('DOMNodeInserted', () => {
+	main()
+})
