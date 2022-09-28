@@ -30,10 +30,6 @@ const readAndFlag = (item, index) => {
 	};
 }
 
-const isRightHashtag = (hashtags) => {
-	hashtags.map(processHashtag);
-}
-
 const processHashtag = (hashtag, index) => {
 	if(hashtag.hasAttribute(CLASS_FLAG)) return;
 	const hashtagText = hashtag.innerText;
