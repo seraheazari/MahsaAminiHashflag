@@ -54,7 +54,12 @@ const hashtagRuleCheck = (text, regex, matcher) => {
 const flagHashtag = (hashtag) => {
 	hashtag.setAttribute(CLASS_FLAG, '')
 	const hashflag = createHashflag();
-	hashtag.parentElement.append(hashflag)
+	const hashtagDomDirection = hashtag.getAttribute('dir')
+	if(hashtagDomDirection === 'rtl') {
+		hashtag.parentElement.append(hashflag)
+	} else {
+		hashtag.before(hashflag)
+	}
 }
 
 const createHashflag = () => {
