@@ -52,49 +52,20 @@ const hashtagRuleCheck = (text, regex, matcher) => {
 }
 
 const flagHashtag = (tweet, hashtag) => {
-	const tweetText = tweet.querySelector('[data-testid="tweetText"]')
-	const tweetTextLang = tweetText?.getAttribute('lang') ?? 'en'
-	// twitter use dir='auto' so even with en it maybe set direction to rtl for tweets containting both persian and latin.
-	const tweetCalculatedDirection = tweetText?.computedStyleMap()?.get('direction')?.value 
 	hashtag.setAttribute(CLASS_FLAG, '')
 	const hashflag = createHashflag();
-	const hashtagDomDirection = hashtag.getAttribute('dir')
-	if(tweetTextLang === 'fa') appendFaTweet(hashtag, hashflag, hashtagDomDirection)
-	else {
-		if(tweetCalculatedDirection === 'rtl') {
-			appendFaTweet(hashtag, hashflag, hashtagDomDirection)
-		} else {
-			appendEnTweet(hashtag, hashflag, hashtagDomDirection)
-		}
-	}
-}
-
-const appendFaTweet = (hashtag, hashflag, hashtagDomDirection) => {
-	if(hashtagDomDirection === 'rtl') {
-		hashtag.after(hashflag)
-	} else {
-		hashtag.before(hashflag)
-	}
-}
-
-const appendEnTweet = (hashtag, hashflag, hashtagDomDirection) => {
-	if(hashtagDomDirection === 'rtl') {
-		hashtag.before(hashflag)
-	} else {
-		hashtag.after(hashflag)
-	}
+	hashtag.append(hashflag);
 }
 
 const createHashflag = () => {
-	const span = document.createElement("span");
 	const img = document.createElement('img')
-	img.style.width = '1em'
-	img.style.margin = '0 0.3em'
-	span.style.display = 'inline-flex';
-	span.style.alignItems = 'center';
+	img.style.width = '1.2em'
+	img.style.height = '1.2em'
+	img.style.verticalAlign = '-20%'
+	img.style.margin = '0 0.075em'
 	img.src = HASHFLAG
-	span.append(img);
-	return span;
+
+	return img;
 }
 
 window.addEventListener('DOMNodeInserted', () => {
