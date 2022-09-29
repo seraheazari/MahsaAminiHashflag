@@ -22,21 +22,21 @@ const ValidHashtagList = [{
 	regex: /([opiran]+)/gm
 }]
 
-const readAndFlag = (item, index) => {
-	const selectHashtags = item.querySelectorAll('[href*="/hashtag"]');
+const readAndFlag = (tweet, index) => {
+	const selectHashtags = tweet.querySelectorAll('[href*="/hashtag"]');
 	const hashtags = selectHashtags ? Array.from(selectHashtags) : [];
 	if(hashtags.length) { 
-		hashtags.forEach(processHashtag)
+		hashtags.forEach(processHashtag(tweet))
 	};
 }
 
-const processHashtag = (hashtag, index) => {
+const processHashtag = (tweet) => (hashtag, index) => {
 	if(hashtag.hasAttribute(CLASS_FLAG)) return;
 	const hashtagText = hashtag.innerText;
 	const normalizedText = hashtagText.replace('#', '').trim().toLowerCase()
 	
 	if(hashtagRules(normalizedText)) {
-		flagHashtag(hashtag);
+		flagHashtag(tweet, hashtag);
 	}
 }
 
@@ -51,14 +51,37 @@ const hashtagRuleCheck = (text, regex, matcher) => {
 	return false;
 }
 
-const flagHashtag = (hashtag) => {
+const flagHashtag = (tweet, hashtag) => {
+	const tweetText = tweet.querySelector('[data-testid="tweetText"]')
+	const tweetTextLang = tweetText?.getAttribute('lang') ?? 'en'
+	// twitter use dir='auto' so even with en it maybe set direction to rtl for tweets containting both persian and latin.
+	const tweetCalculatedDirection = tweetText?.computedStyleMap()?.get('direction')?.value 
 	hashtag.setAttribute(CLASS_FLAG, '')
 	const hashflag = createHashflag();
 	const hashtagDomDirection = hashtag.getAttribute('dir')
+	if(tweetTextLang === 'fa') appendFaTweet(hashtag, hashflag, hashtagDomDirection)
+	else {
+		if(tweetCalculatedDirection === 'rtl') {
+			appendFaTweet(hashtag, hashflag, hashtagDomDirection)
+		} else {
+			appendEnTweet(hashtag, hashflag, hashtagDomDirection)
+		}
+	}
+}
+
+const appendFaTweet = (hashtag, hashflag, hashtagDomDirection) => {
 	if(hashtagDomDirection === 'rtl') {
-		hashtag.parentElement.append(hashflag)
+		hashtag.after(hashflag)
 	} else {
 		hashtag.before(hashflag)
+	}
+}
+
+const appendEnTweet = (hashtag, hashflag, hashtagDomDirection) => {
+	if(hashtagDomDirection === 'rtl') {
+		hashtag.before(hashflag)
+	} else {
+		hashtag.after(hashflag)
 	}
 }
 
