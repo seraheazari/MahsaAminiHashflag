@@ -1,16 +1,16 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "MahsaAmini Hashflag - Iran Protests",
 	"version": "0.0.1",
 	"description": "Adds custom HashFlag to the tweets containing #MahsaAmini, #مهسا_امینی, #opIran and #اعتصابات_سراسری",
-	"permissions": [
+	"host_permissions": [
 		"*://*.twitter.com/*"
 	],
 	"content_scripts": [{
     "js": ["js/background.js"],
     "matches": ["*://*.twitter.com/*"]
   }],
-	"browser_action" : { 
+	"action" : { 
 		"default_icon" : "images/icon-128.png"
 	},
 	"icons": {
