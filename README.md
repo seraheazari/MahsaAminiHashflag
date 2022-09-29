@@ -8,6 +8,8 @@ We will deploy the extension to the chrome store soon and will add a link once i
 
 The code is not perfect, I wrote it in an hour. I never wrote an extension before, if you have experience, create PR to this repo and I'll take a look.
 
+If you know how to create the same extension for other browsers, please fork this and do it. 
+
 ## Petition
 
 If Twitter listens to people asking them to create a Hashflag for these main hashtags for Iran protests, we do not need this extension, and this only works on Chrome, many people use mobile phone or other browsers to tweet. Sign the petition and share it: 
