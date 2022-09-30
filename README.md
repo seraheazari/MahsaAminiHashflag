@@ -2,7 +2,10 @@
 
 This Chrome extension will add a HashFlag to the tweets containing [#مهسا_امینی](https://twitter.com/hashtag/%D9%85%D9%87%D8%B3%D8%A7_%D8%A7%D9%85%DB%8C%D9%86%DB%8C?src=hashtag_click), [#MahsaAmini](https://twitter.com/search?q=%23MahsaAmini&src=typed_query), [#OpIran](https://twitter.com/hashtag/OpIran?src=hashtag_click), [#اعتصابات_سراسری](https://twitter.com/hashtag/%D8%A7%D8%B9%D8%AA%D8%B5%D8%A7%D8%A8%D8%A7%D8%AA_%D8%B3%D8%B1%D8%A7%D8%B3%D8%B1%DB%8C?src=hashtag_click) to avoid retweeting manipulated hashtags created by the Iran regime cyber army.
 
-We will deploy the extension to the chrome store soon and will add a link once it's ready, until then, follow the guide to enable it locally.
+## Download: 
+
+- Firefox Add-On Store: [Download Here](https://addons.mozilla.org/en-US/firefox/addon/mahsaamini-hashflag/)
+- Chrome: Still waiting for store review
 
 ## Contribute
 
