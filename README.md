@@ -5,7 +5,7 @@ This Chrome extension will add a HashFlag to the tweets containing [#مهسا_ا
 ## Download: 
 
 - Firefox Add-On Store: [Download Here](https://addons.mozilla.org/en-US/firefox/addon/mahsaamini-hashflag/)
-- Chrome: Still waiting for store review
+- Chrome: [Download Here] https://chrome.google.com/webstore/detail/mahsaamini-hashflag-iran/mbejcclbkolffjchoiiipmllifhjjcme
 
 ## Contribute
 
