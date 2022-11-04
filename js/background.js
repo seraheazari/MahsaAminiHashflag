@@ -5,7 +5,7 @@ const HOSTS = {
 	Twitter: 'twitter.com'
 }
 
-const HASHTAG_GOLIST = ['#مهسا_امینی', '#mahsaamini', '#اعتصابات_سراسری', '#opiran']
+const HASHTAG_GOLIST = ['#مهسا_امینی', '#MahsaAmini', '#اعتصابات_سراسری', '#OpIran', '#IranRevolution', '#IranRevolution2022']
 
 const twitter = (target) => {
 	// Tweet
@@ -35,6 +35,27 @@ const tweetDeck = (target) => {
 	}
 }
 
+const StartKeyCode = 49;
+const keyCodeNotInRange = (keyCode) => !(keyCode >= StartKeyCode && keyCode < StartKeyCode + HASHTAG_GOLIST.length)
+
+const hashtagShortcuts = (event) => {
+	const {composed, shiftKey, ctrlKey, keyCode} = event;
+	
+	if(keyCodeNotInRange(keyCode)) return
+	if(!(composed && shiftKey && ctrlKey)) return
+	event.preventDefault();
+	return insertHashtag(keyCode)
+}
+
+const insertHashtag = (keyCode) => {
+	const index = keyCode - StartKeyCode;
+	const hashtagToInsert = HASHTAG_GOLIST[index]
+	const textArea = document.querySelector('.compose-text')
+	if(textArea !== document.activeElement) return;
+	textArea.value += `${hashtagToInsert} `
+	return;
+}
+
 const addHashFlag = (element, hashtagText) => {
 	hashtagText = hashtagText.toLowerCase().trim()
 	if (HASHTAG_GOLIST.some((item) => item.toLowerCase() === hashtagText)) {
@@ -42,6 +63,7 @@ const addHashFlag = (element, hashtagText) => {
 		element.appendChild(hashFlag)
 	}
 }
+
 
 const createHashflag = () => {
 	const img = document.createElement('img')
@@ -57,7 +79,10 @@ const createHashflag = () => {
 // Process inserted nodes
 window.addEventListener('DOMNodeInserted', ({ target }) => {
 	if (typeof target.getAttribute !== 'function') return
-	if(window.location.host === HOSTS.TweetDeck) return tweetDeck(target)
+	if(window.location.host === HOSTS.TweetDeck) {
+		document.addEventListener('keydown', hashtagShortcuts)
+		return tweetDeck(target)
+	}
 	if(window.location.host === HOSTS.Twitter) return twitter(target)
 	return;
 })
