@@ -1,17 +1,20 @@
 # Mahsa Amini Hashflag
 
-This Chrome extension will add a HashFlag to the tweets containing [#مهسا_امینی](https://twitter.com/hashtag/%D9%85%D9%87%D8%B3%D8%A7_%D8%A7%D9%85%DB%8C%D9%86%DB%8C?src=hashtag_click), [#MahsaAmini](https://twitter.com/search?q=%23MahsaAmini&src=typed_query), [#OpIran](https://twitter.com/hashtag/OpIran?src=hashtag_click), [#اعتصابات_سراسری](https://twitter.com/hashtag/%D8%A7%D8%B9%D8%AA%D8%B5%D8%A7%D8%A8%D8%A7%D8%AA_%D8%B3%D8%B1%D8%A7%D8%B3%D8%B1%DB%8C?src=hashtag_click) to avoid retweeting manipulated hashtags created by the Iran regime cyber army.
+This Chrome extension will add a HashFlag to the tweets containing [#مهسا_امینی](https://twitter.com/hashtag/%D9%85%D9%87%D8%B3%D8%A7_%D8%A7%D9%85%DB%8C%D9%86%DB%8C?src=hashtag_click), [#MahsaAmini](https://twitter.com/search?q=%23MahsaAmini&src=typed_query), [#OpIran](https://twitter.com/hashtag/OpIran?src=hashtag_click), [#اعتصابات_سراسری](https://twitter.com/hashtag/%D8%A7%D8%B9%D8%AA%D8%B5%D8%A7%D8%A8%D8%A7%D8%AA_%D8%B3%D8%B1%D8%A7%D8%B3%D8%B1%DB%8C?src=hashtag_click), [#IranRevolution](https://twitter.com/hashtag/IranRevolution?src=hashtag_click), [#IranRevolution2022](https://twitter.com/hashtag/IranRevolution?src=hashtag_click) to avoid retweeting manipulated hashtags created by the Iran regime cyber army.
 
 ## Download: 
 
 - Firefox Add-On Store: [Download Here](https://addons.mozilla.org/en-US/firefox/addon/mahsaamini-hashflag/)
 - Chrome: [Download Here](https://chrome.google.com/webstore/detail/mahsaamini-hashflag-iran/mbejcclbkolffjchoiiipmllifhjjcme)
 
+
+## Keyboard Shortcuts (TweetDeck only)
+
+On TweetDeck you can use keyboard combination of `ctrl + shift + (1 to 6)` to insert hashtags quickly. 
+
 ## Contribute
 
-The code is not perfect, I wrote it in an hour. I never wrote an extension before, if you have experience, create PR to this repo and I'll take a look.
-
-If you know how to create the same extension for other browsers, please fork this and do it. 
+Feel free to open PRs or create issue and I will take a look as soon as possible.
 
 ## Petition
 
