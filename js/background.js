@@ -5,7 +5,7 @@ const HOSTS = {
 	Twitter: 'twitter.com'
 }
 
-const HASHTAG_GOLIST = ['#مهسا_امینی', '#MahsaAmini', '#اعتصابات_سراسری', '#OpIran', '#IranRevolution', '#IranRevolution2022']
+const HASHTAG_GOLIST = ['#مهسا_امینی', '#MahsaAmini', '#اعتصابات_سراسری', '#OpIran', '#IranRevolution', '#IranRevolution2022', '#ژینا_ئه‌مینی']
 
 const twitter = (target) => {
 	// Tweet
